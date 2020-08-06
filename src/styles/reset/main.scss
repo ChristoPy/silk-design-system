@@ -8,9 +8,33 @@
 /* Remove default browser padding */
 body {
   padding: 0;
+  min-height: 100vh;
 }
 
 /* Remove default browser margin */
 body, p, h1, h2, h3, h4 {
   margin: 0;
+}
+
+/* Define image spect ratio */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Make form elements use it's parent font */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Slow animations if the user wants to */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
