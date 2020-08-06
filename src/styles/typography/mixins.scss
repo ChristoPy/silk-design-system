@@ -1,0 +1,36 @@
+/**
+ * Applies font-size and line-height to a specific element.
+ * Since the typographic scale is from small to large screens,
+ * these properties can be inherited from the previous scale.
+ * With this there's no need to rewrite the same values again.
+**/ 
+@mixin typography ($element, $font-size, $line-height) {
+  #{$element} {
+    @if $font-size != none {
+      font-size: $font-size;
+    }
+    @if $line-height != none {
+      line-height: $line-height;
+    }
+  }
+}
+
+/**
+ * Applies a typographic scale to a specific element
+ * based into a scale name.
+**/ 
+@mixin typography-from-scale ($scale) {
+  @each $element, $font-size, $line-height in $scale {
+    @include typography($element, $font-size, $line-height);
+  }
+}
+
+/**
+ * Applies a typographic scale to a specific element
+ * using a breakpoint to define the scale range.
+**/ 
+@mixin typography-from-breakpoint-and-scale ($breakpoint, $scale) {
+  @media (min-width: $breakpoint) {
+    @include typography-from-scale($scale);
+  }
+}

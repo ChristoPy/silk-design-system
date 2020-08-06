@@ -1,0 +1,36 @@
+/**
+ * Typography scale.
+ * They are structured as follows:
+ * element -> font-size -> line-height
+ * If a value is 'none', means that it will be inherited.
+ * Inheritance is the reason that there's no other scales,
+ * because it would led to dead breakpoint code insertion
+ * without any scale definition.
+**/
+
+$phone:
+  '#app'          1em            1.25em,
+  'h1'            2em            1.25em,
+  'h2'            1.625em        1.15384615em,
+  'h3'            1.375em        1.13636364em,
+  'h4'            1.125em        1.11111111em,
+;
+
+$tablet:
+  '#app'          none           1.375em,
+  'h1'            2.5em          1.125em,
+  'h2'            2em            1.25em,
+  'h3'            1.5em          1.25em,
+  'h4'            1.125em        1.22222222em,
+;
+
+
+$desktop:
+  '#app'          none           none,
+  'h1'            3em            1.05em,
+  'h2'            2.25em         none,
+  'h3'            1.75em         none,
+  'h4'            none           none,
+;
+
+

@@ -1,0 +1,30 @@
+@import 'variables.scss';
+@import 'mixins.scss';
+
+/* Resets the font size virtually to 16px */
+body {
+  font-size: 100%;
+}
+
+/* Keep the same font-size-adjust to needed elements */
+body, input, textarea, select, option, h1, h2, h3, h4, h5, h6 {
+  font-size-adjust: 0.5;
+}
+
+/**
+ * Creates base typography
+ * Covers phone and up
+**/
+@include typography-from-scale($phone);
+
+/**
+ * Creates complementary typography
+ * Covers tablet and up
+**/
+@include typography-from-breakpoint-and-scale (43.75em, $tablet);
+
+/**
+ * Creates complementary typography
+ * Covers desktop and up
+**/
+@include typography-from-breakpoint-and-scale(56.25em, $desktop);

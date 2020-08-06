@@ -1,0 +1,16 @@
+/* Define elements sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default browser padding */
+body {
+  padding: 0;
+}
+
+/* Remove default browser margin */
+body, p, h1, h2, h3, h4 {
+  margin: 0;
+}
