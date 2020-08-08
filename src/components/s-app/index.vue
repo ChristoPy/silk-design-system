@@ -9,6 +9,6 @@ require('@/styles/reset/main.scss');
 require('@/styles/typography/main.scss');
 
 export default {
-  name: 'App',
+  name: 'S-App',
 };
 </script>
