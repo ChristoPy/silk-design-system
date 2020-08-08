@@ -1,0 +1,5 @@
+@import 'variables.scss';
+@import 'mixins.scss';
+
+@include background-from-colors($colors);
+@include text-from-colors($colors);

@@ -1,0 +1,23 @@
+@mixin background ($color) {
+  .#{$color} {
+    background-color: $color;
+  }
+}
+
+@mixin text ($color) {
+  .#{$color}-text {
+    color: $color;
+  }
+}
+
+@mixin background-from-colors ($colors) {
+  @each $color in $colors {
+    @include background($color);
+  }
+}
+
+@mixin text-from-colors ($colors) {
+  @each $color in $colors {
+    @include text($color);
+  }
+}
