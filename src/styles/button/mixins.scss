@@ -1,0 +1,49 @@
+@mixin button-reset {
+  button {
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-font-smoothing: antialiased;
+
+    border: none;
+    outline: none;
+    -webkit-appearance: button;
+
+    padding: $vertical-padding $horizontal-padding;
+    border-radius: $border-radius;
+
+    cursor: pointer;
+
+    &.disabled {
+      opacity: $disabled-opacity;
+      cursor: not-allowed;
+    }
+  }
+}
+
+@mixin button ($type, $color) {
+  button.#{$type} {
+    color: #fff;
+    background: $color;
+  }
+}
+
+@mixin button-outlined ($type, $color) {
+  button.#{$type}.outlined {
+    border: 1px solid $color;
+    background: none;
+    color: $color;
+  }
+}
+
+@mixin button-disabled () {
+  button[disabled] {
+    opacity: $disabled-opacity;
+  }
+}
+
+@mixin button-from-types ($types) {
+  @each $type, $color in $types {
+    @include button($type, $color);
+    @include button-outlined($type, $color);
+  }
+}
