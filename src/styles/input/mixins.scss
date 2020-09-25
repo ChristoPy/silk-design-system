@@ -7,7 +7,6 @@
     }
 
     label, small {
-      font-size: 1em;
       display: block;
     }
 
@@ -25,11 +24,12 @@
 
       color: $color-gray;
 
-      padding: $horizontal-padding;
+      padding: $input-padding;
       border-radius: $border-radius;
     }
 
     small {
+      font-size: $hint-font-size;
       opacity: $hint-opacity;
       margin-top: $hint-magin-top;
     }
