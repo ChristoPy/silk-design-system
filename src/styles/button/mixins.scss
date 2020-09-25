@@ -13,10 +13,20 @@
 
     cursor: pointer;
 
-    &.disabled {
-      opacity: $disabled-opacity;
-      cursor: not-allowed;
-    }
+    transition: .3s ease;
+  }
+}
+
+@mixin button-disabled () {
+  button:disabled {
+    opacity: $disabled-opacity;
+    cursor: not-allowed;
+  }
+}
+
+@mixin button-active () {
+  button:active {
+    transform: scale(.98);
   }
 }
 
@@ -29,15 +39,18 @@
 
 @mixin button-outlined ($type, $color) {
   button.#{$type}.outlined {
-    border: 1px solid $color;
+    -webkit-box-shadow: inset 0px 0px 0px 1px $color;
+    -moz-box-shadow: inset 0px 0px 0px 1px $color;
+    box-shadow: inset 0px 0px 0px 1px $color;
     background: none;
     color: $color;
   }
 }
 
-@mixin button-disabled () {
-  button[disabled] {
-    opacity: $disabled-opacity;
+@mixin button-block ($type) {
+  button.#{$type}.block {
+    display: block;
+    width: 100%;
   }
 }
 
@@ -45,5 +58,6 @@
   @each $type, $color in $types {
     @include button($type, $color);
     @include button-outlined($type, $color);
+    @include button-block($type);
   }
 }

@@ -3,5 +3,6 @@
 
 @include button-reset();
 @include button-disabled();
+@include button-active();
 
 @include button-from-types($button-types);
