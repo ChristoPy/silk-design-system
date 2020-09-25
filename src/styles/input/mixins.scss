@@ -1,0 +1,59 @@
+@mixin input-reset {
+  .input-area {
+    width: 100%;
+
+    & > * {
+      transition: .3s ease;
+    }
+
+    label, small {
+      font-size: 1em;
+      display: block;
+    }
+
+    label {
+      opacity: $label-opacity;
+      margin-bottom: $label-margin-bottom;
+    }
+
+    input {
+      border: none;
+      outline: none;
+      -webkit-appearance: none;
+      background: none;
+      width: 100%;
+
+      color: $color-gray;
+
+      padding: $horizontal-padding;
+      border-radius: $border-radius;
+    }
+
+    small {
+      opacity: $hint-opacity;
+      margin-top: $hint-magin-top;
+    }
+  }
+}
+
+@mixin input-disabled {
+  .input-area.disabled {
+    opacity: $disabled-opacity;
+    cursor: not-allowed;
+
+    & > * {
+      opacity: $disabled-opacity;
+      cursor: not-allowed;  
+    }
+  }
+}
+
+@mixin input {
+  .input-area {
+    input {
+      -webkit-box-shadow: inset 0px 0px 0px 1px $color-gray;
+      -moz-box-shadow: inset 0px 0px 0px 1px $color-gray;
+      box-shadow: inset 0px 0px 0px 1px $color-gray;
+    }
+  }
+}

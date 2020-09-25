@@ -1,0 +1,7 @@
+@import 'variables.scss';
+@import 'mixins.scss';
+
+@include input-reset();
+@include input-disabled();
+
+@include input();
