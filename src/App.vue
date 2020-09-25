@@ -24,18 +24,25 @@
     <SButton text="Primary" block danger outlined/>
     <SButton text="Primary" block danger disabled/>
     <SButton text="Primary" block danger outlined disabled/>
+
+    <SInput name="e-mail" label="E-mail" hint="Yo" />
+    <SInput name="e-mail" label="E-mail" />
+
+    <SInput name="e-mail" label="E-mail" disabled />
   </S-App>
 </template>
 
 <script>
 import SApp from './components/s-app/index.vue';
 import SButton from './components/s-button/index.vue';
+import SInput from './components/s-input/index.vue';
 
 export default {
   name: 'App',
   components: {
     SApp,
     SButton,
+    SInput,
   },
 };
 </script>
