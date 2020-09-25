@@ -10,7 +10,7 @@
       numquam distinctio explicabo quae, molestiae repellat! Velit,
       dignissimos doloribus? Libero, laborum saepe!
     </p>
-    <SButton text="Primary" block />
+    <SButton text="Primary" block/>
     <SButton text="Primary" block outlined/>
     <SButton text="Primary" block disabled/>
     <SButton text="Primary" block outlined disabled/>
@@ -25,10 +25,11 @@
     <SButton text="Primary" block danger disabled/>
     <SButton text="Primary" block danger outlined disabled/>
 
-    <SInput name="e-mail" label="E-mail" hint="Yo" />
-    <SInput name="e-mail" label="E-mail" />
+    <SInput name="e-mail" label="E-mail"/>
+    <SInput name="e-mail" label="E-mail" disabled/>
 
-    <SInput name="e-mail" label="E-mail" disabled />
+    <SInput name="e-mail" label="E-mail" :hint="hint" v-model="email"/>
+    <SInput name="e-mail" label="E-mail" :hint="hint" v-model="email" disabled/>
   </S-App>
 </template>
 
@@ -44,5 +45,9 @@ export default {
     SButton,
     SInput,
   },
+  data: () => ({
+    email: '',
+    hint: "We'll not spam you, it's okay",
+  }),
 };
 </script>
