@@ -1,0 +1,95 @@
+// Add an inset border of 1px based on the received color
+@mixin add-border ($color) {
+  -webkit-box-shadow: inset 0px 0px 0px 1px $color;
+  -moz-box-shadow: inset 0px 0px 0px 1px $color;
+  box-shadow: inset 0px 0px 0px 1px $color;
+}
+
+// Add a disabled style
+@mixin add-disabled {
+  opacity: $disabled-opacity;
+  cursor: not-allowed;
+}
+
+// Add a square with rounded corners
+@mixin add-circle ($width, $height, $radius) {
+  width: $width;
+  height: $height;
+  border-radius: $radius;
+}
+
+// Add the radio input base style
+@mixin base-radio {
+  .radio-area {
+    width: 100%;
+    position: relative;
+    padding-left: $label-left-space;
+    cursor: pointer;
+
+    & > * {
+      transition: .3s ease;
+    }
+
+    input {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .status-area {
+      @include add-border($color-gray);
+      @include add-circle($outer-circle-width, $outer-circle-height, $border-radius);
+      position: absolute;
+      top: .18em;
+      left: 0;
+      background: transparent;
+
+      overflow: hidden;
+
+      &::after {
+        @include add-circle($inner-circle-width, $inner-circle-height, $border-radius);
+        content: "";
+        position: absolute;
+        top: $inner-circle-height / 2;
+        left: $inner-circle-width / 2;
+        transform: scale(2);
+      }
+    }
+  }
+}
+
+// Add the radio input style when it is selected
+@mixin selected-radio {
+  .radio-area {
+    input {
+      &:checked ~ .status-area {
+        @include add-border($color-blue);
+
+        &::after {
+          background: $color-blue;
+          transform: scale(1);
+        }
+      }
+    }
+  }
+}
+
+// Main radio mixin, it defines the base
+// and selected radio input styling
+@mixin radio {
+  @include base-radio();
+  @include selected-radio();
+}
+
+// Adds the disabled styling
+// applyies to the container and its children
+@mixin radio-disabled {
+  .radio-area.disabled {
+    @include add-disabled();
+
+    & > * {
+      @include add-disabled();
+    }
+  }
+}

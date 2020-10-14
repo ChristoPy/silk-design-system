@@ -30,6 +30,11 @@
 
     <SInput name="e-mail" label="E-mail" :hint="hint" v-model="email"/>
     <SInput name="e-mail" label="E-mail" :hint="hint" v-model="email" disabled/>
+
+    <SRadio name="e-mail" label="E-mail" v-model="selected"/>
+    <SRadio name="e-mail" label="E-mail" v-model="selected"/>
+
+    <SRadio name="disabled" label="Disabled" disabled/>
   </S-App>
 </template>
 
@@ -37,6 +42,7 @@
 import SApp from './components/s-app/index.vue';
 import SButton from './components/s-button/index.vue';
 import SInput from './components/s-input/index.vue';
+import SRadio from './components/s-radio/index.vue';
 
 export default {
   name: 'App',
@@ -44,10 +50,12 @@ export default {
     SApp,
     SButton,
     SInput,
+    SRadio,
   },
   data: () => ({
     email: '',
     hint: "We'll not spam you, it's okay",
+    selected: false,
   }),
 };
 </script>
