@@ -28,7 +28,7 @@
     <SInput name="e-mail" label="E-mail"/>
     <SInput name="e-mail" label="E-mail" disabled/>
 
-    <SInput name="e-mail" label="E-mail" :hint="hint" v-model="email"/>
+    <SInput name="e-mail" label="E-mail" :hint="hint" v-model="email" :error="error"/>
     <SInput name="e-mail" label="E-mail" :hint="hint" v-model="email" disabled/>
 
     <SRadio name="e-mail" label="E-mail" v-model="selected"/>
@@ -56,6 +56,20 @@ export default {
     email: '',
     hint: "We'll not spam you, it's okay",
     selected: false,
+    error: false,
   }),
+  watch: {
+    email() {
+      const noAtSymbol = this.email.length && !this.email.includes('@');
+
+      if (noAtSymbol) {
+        this.hint = 'Your email should contain an \'@\' character';
+        this.error = true;
+      } else {
+        this.hint = "We'll not spam you, it's okay";
+        this.error = false;
+      }
+    },
+  },
 };
 </script>

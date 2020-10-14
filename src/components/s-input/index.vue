@@ -34,6 +34,11 @@ export default {
       required: false,
       default: '',
     },
+    error: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
   },
   data: () => ({
     text: '',
@@ -45,6 +50,7 @@ export default {
     state() {
       const classes = {
         'input-area': true,
+        error: this.error,
       };
 
       if (this.disabled) {

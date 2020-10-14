@@ -1,3 +1,9 @@
+@mixin add-border ($color) {
+  -webkit-box-shadow: inset 0px 0px 0px 1px $color;
+  -moz-box-shadow: inset 0px 0px 0px 1px $color;
+  box-shadow: inset 0px 0px 0px 1px $color;
+}
+
 @mixin input-reset {
   .input-area {
     width: 100%;
@@ -48,12 +54,23 @@
   }
 }
 
+@mixin input-error {
+  .input-area.error {
+    label, small {
+      color: $color-red;
+      opacity: 1;
+    }
+
+    input {
+      @include add-border($color-red);
+    }
+  }
+}
+
 @mixin input {
   .input-area {
     input {
-      -webkit-box-shadow: inset 0px 0px 0px 1px $color-gray;
-      -moz-box-shadow: inset 0px 0px 0px 1px $color-gray;
-      box-shadow: inset 0px 0px 0px 1px $color-gray;
+      @include add-border($color-gray);
     }
   }
 }
