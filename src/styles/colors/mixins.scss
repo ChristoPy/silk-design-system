@@ -1,23 +1,23 @@
-@mixin background ($color) {
+@mixin background ($color, $value) {
   .#{$color} {
-    background-color: $color;
+    background-color: $value;
   }
 }
 
-@mixin text ($color) {
+@mixin text ($color, $value) {
   .#{$color}-text {
-    color: $color;
+    color: $value;
   }
 }
 
 @mixin background-from-colors ($colors) {
-  @each $color in $colors {
-    @include background($color);
+  @each $color-name, $color-value in $colors {
+    @include background($color-name, $color-value);
   }
 }
 
 @mixin text-from-colors ($colors) {
-  @each $color in $colors {
-    @include text($color);
+  @each $color-name, $color-value in $colors {
+    @include text($color-name, $color-value);
   }
 }
