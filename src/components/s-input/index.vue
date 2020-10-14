@@ -1,7 +1,7 @@
 <template>
   <div :class="state">
     <label :for="name">{{ label }}</label>
-    <input type="text" :disabled="!!disabled" v-model="text">
+    <input type="text" :name="name" :disabled="!!disabled" v-model="text">
     <small v-show="hint">{{ hint }}</small>
   </div>
 </template>
