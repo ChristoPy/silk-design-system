@@ -1,13 +1,24 @@
 @import 'variables.scss';
 @import 'mixins.scss';
 
+// Import font to use in headings
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@700&display=swap');
+
+// Import font to use in body copy
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&family=Work+Sans:wght@700&display=swap');
+
 /* Resets the font size virtually to 16px */
 body {
   font-size: 100%;
+  font-family: 'Poppins', sans-serif;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Work Sans', sans-serif;
 }
 
 /* Keep the same font-size-adjust to needed elements */
-body, input, textarea, select, option, h1, h2, h3, h4, h5, h6 {
+body, input, textarea, select, option, h1, h2, h3, h4 {
   font-size-adjust: 0.5;
 }
 
