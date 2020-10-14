@@ -1,6 +1,10 @@
 # Typography
 It's based on a mobile first and a relative scale to ensure readability across all devices from [this](web.archive.org/web/20180124011019/http://typecast.com/blog/a-more-modern-scale-for-web-typography) post.
 
+# Fonts
+- Headings: [Work Sans](https://fonts.google.com/specimen/Work+Sans)
+- Body copy: [Poppings](https://fonts.google.com/specimen/Poppins)
+
 # Scale
 The scale starts from small screens and goes to the large ones.
 
