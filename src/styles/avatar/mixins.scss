@@ -1,0 +1,22 @@
+@mixin avatar {
+  .avatar-area {
+    display: inline-block;
+
+    .avatar {
+      width: $avatar-size;
+      height: $avatar-size;
+      border-radius: 50%;
+      background-color: $color-gray;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  
+      .text {
+        font-size: $avatar-font-size;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
