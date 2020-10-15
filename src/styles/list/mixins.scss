@@ -1,0 +1,38 @@
+@mixin list-reset {
+  li {
+    list-style-type: none;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@mixin list-title {
+  .title {
+    font-weight: bold;
+  }
+}
+
+@mixin list-text {
+  .text {
+    font-size: $text-font-size;
+  }
+}
+
+@mixin list {
+  ul.list {
+    width: 100%;
+
+    li.list-item {
+      margin-bottom: .5em;
+      @include list-title();
+      @include list-text();
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+

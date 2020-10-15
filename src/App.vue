@@ -35,6 +35,13 @@
     <SRadio name="e-mail" label="E-mail" v-model="selected"/>
 
     <SRadio name="disabled" label="Disabled" disabled/>
+
+    <div>
+      <SAvatar name="SingleName"/>
+      <SAvatar name="Multiple Name"/>
+    </div>
+
+    <SList :items="items"/>
   </S-App>
 </template>
 
@@ -43,6 +50,8 @@ import SApp from './components/s-app/index.vue';
 import SButton from './components/s-button/index.vue';
 import SInput from './components/s-input/index.vue';
 import SRadio from './components/s-radio/index.vue';
+import SAvatar from './components/s-avatar/index.vue';
+import SList from './components/s-list/index.vue';
 
 export default {
   name: 'App',
@@ -51,12 +60,30 @@ export default {
     SButton,
     SInput,
     SRadio,
+    SAvatar,
+    SList,
   },
   data: () => ({
     email: '',
     hint: "We'll not spam you, it's okay",
     selected: false,
     error: false,
+    items: [
+      {
+        name: 'Item 1 name',
+        text: 'Item 1 text',
+      },
+      {
+        name: 'Item 2 name',
+      },
+      {
+        name: 'Item 3 name',
+      },
+      {
+        name: 'Item 4 name',
+        text: 'Item 4 text',
+      },
+    ],
   }),
   watch: {
     email() {
