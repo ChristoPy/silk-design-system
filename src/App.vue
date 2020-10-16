@@ -42,6 +42,10 @@
     </div>
 
     <SList :items="items"/>
+
+    <SList>
+      <SListItem v-for="item in singleItems" :key="item.name" :name="item.name" :text="item.text"/>
+    </SList>
   </S-App>
 </template>
 
@@ -52,6 +56,7 @@ import SInput from './components/s-input/index.vue';
 import SRadio from './components/s-radio/index.vue';
 import SAvatar from './components/s-avatar/index.vue';
 import SList from './components/s-list/index.vue';
+import SListItem from './components/s-list-item/index.vue';
 
 export default {
   name: 'App',
@@ -62,6 +67,7 @@ export default {
     SRadio,
     SAvatar,
     SList,
+    SListItem,
   },
   data: () => ({
     email: '',
@@ -82,6 +88,15 @@ export default {
       {
         name: 'Item 4 name',
         text: 'Item 4 text',
+      },
+    ],
+    singleItems: [
+      {
+        name: 'Single Item Without Text',
+      },
+      {
+        name: 'Single Item',
+        text: 'Single Item Text',
       },
     ],
   }),

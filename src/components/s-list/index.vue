@@ -1,21 +1,26 @@
 <template>
   <ul class="list">
-    <li v-for="item in items" class="list-item" :key="item.name">
-      <div class="title">{{ item.name }}</div>
-      <div v-if="item.text" class="text">{{ item.text }}</div>
-    </li>
+    <template v-if="items">
+      <SListItem v-for="item in items" :key="item.name" :name="item.name" :text="item.text"/>
+    </template>
+    <slot v-else/>
   </ul>
 </template>
 
 <script>
 require('../../styles/list/main.scss');
 
+const SListItem = () => import('@/components/s-list-item/index.vue');
+
 export default {
   name: 'SList',
+  components: {
+    SListItem,
+  },
   props: {
     items: {
       type: Array,
-      required: true,
+      required: false,
     },
   },
 };
