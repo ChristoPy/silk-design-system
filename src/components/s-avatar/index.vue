@@ -31,7 +31,7 @@ export default {
   computed: {
     classes() {
       return {
-        'with-text': this.name,
+        'with-text': Boolean(this.name),
       };
     },
     nameAsInitials() {

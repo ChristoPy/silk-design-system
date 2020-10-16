@@ -38,7 +38,7 @@
 
     <div>
       <SAvatar name="SingleName"/>
-      <SAvatar :image="avatar" description="yo"/>
+      <SAvatar :image="avatar" :description="description"/>
       <SAvatar name="Multiple Name"/>
     </div>
 
@@ -47,6 +47,8 @@
     <SList>
       <SListItem v-for="item in singleItems" :key="item.name" :name="item.name" :text="item.text"/>
     </SList>
+
+    <SList :items="itemsWithAvatar"/>
   </S-App>
 </template>
 
@@ -101,7 +103,44 @@ export default {
       },
     ],
     avatar: 'https://images.pexels.com/photos/709790/pexels-photo-709790.jpeg',
+    description: 'A user profile description as alt text',
   }),
+  computed: {
+    itemsWithAvatar() {
+      return [
+        {
+          name: 'Item 1 with avatar name',
+          text: 'Item 1 with avatar text',
+          avatar: {
+            name: 'Avatar Name',
+            description: this.description,
+          },
+        },
+        {
+          name: 'Item 2 with avatar name',
+          avatar: {
+            image: this.avatar,
+            description: this.description,
+          },
+        },
+        {
+          name: 'Item 3 with avatar and no image',
+          avatar: {
+            name: 'Design System',
+            description: this.description,
+          },
+        },
+        {
+          name: 'Item 4 with avatar name',
+          text: 'Item 4 with avatar text',
+          avatar: {
+            image: this.avatar,
+            description: this.description,
+          },
+        },
+      ];
+    },
+  },
   watch: {
     email() {
       const noAtSymbol = this.email.length && !this.email.includes('@');

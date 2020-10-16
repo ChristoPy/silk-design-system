@@ -26,13 +26,21 @@
 
     li.list-item {
       margin-bottom: .5em;
-      @include list-title();
-      @include list-text();
+      display: flex;
+      align-items: center;
 
       &:last-child {
         margin-bottom: 0;
       }
+
+      .left-area {
+        margin-right: $content-left-space;
+        height: $avatar-size;
+      }
+      .content-area {
+        @include list-title();
+        @include list-text();
+      }
     }
   }
 }
-

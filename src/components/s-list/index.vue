@@ -1,7 +1,13 @@
 <template>
   <ul class="list">
     <template v-if="items">
-      <SListItem v-for="item in items" :key="item.name" :name="item.name" :text="item.text"/>
+      <SListItem
+        v-for="item in items"
+        :key="item.name"
+        :name="item.name"
+        :text="item.text"
+        :avatar="item.avatar"
+      />
     </template>
     <slot v-else/>
   </ul>
