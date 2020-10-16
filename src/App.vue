@@ -38,6 +38,7 @@
 
     <div>
       <SAvatar name="SingleName"/>
+      <SAvatar :image="avatar" description="yo"/>
       <SAvatar name="Multiple Name"/>
     </div>
 
@@ -99,6 +100,7 @@ export default {
         text: 'Single Item Text',
       },
     ],
+    avatar: 'https://images.pexels.com/photos/709790/pexels-photo-709790.jpeg',
   }),
   watch: {
     email() {

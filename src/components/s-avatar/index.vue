@@ -1,7 +1,10 @@
 <template>
   <div class="avatar-area">
-    <div class="avatar">
-      <div class="text">{{ nameAsInitials }}</div>
+    <div :class="['avatar', classes]">
+      <div class="text" v-if="name && !image">{{ nameAsInitials }}</div>
+      <div class="image" v-else>
+        <img :src="image" :alt="description">
+      </div>
     </div>
   </div>
 </template>
@@ -14,10 +17,23 @@ export default {
   props: {
     name: {
       type: String,
-      required: true,
+      required: false,
+    },
+    image: {
+      type: String,
+      required: false,
+    },
+    description: {
+      type: String,
+      required: false,
     },
   },
   computed: {
+    classes() {
+      return {
+        'with-text': this.name,
+      };
+    },
     nameAsInitials() {
       const splittedName = this.name.split(' ');
       let initials = this.getInitialFromString(splittedName[0]);
