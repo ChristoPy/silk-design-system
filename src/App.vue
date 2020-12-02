@@ -49,6 +49,12 @@
     </SList>
 
     <SList :items="itemsWithAvatar"/>
+
+    <SCard title="First card"/>
+    <SCard title="First card with text" text="some text in here"/>
+
+    <SCard title="First outlined card" outlined/>
+    <SCard title="First outlined card with text" text="some text in here" outlined/>
   </S-App>
 </template>
 
@@ -60,6 +66,7 @@ import SRadio from './components/s-radio/index.vue';
 import SAvatar from './components/s-avatar/index.vue';
 import SList from './components/s-list/index.vue';
 import SListItem from './components/s-list-item/index.vue';
+import SCard from './components/s-card/index.vue';
 
 export default {
   name: 'App',
@@ -71,6 +78,7 @@ export default {
     SAvatar,
     SList,
     SListItem,
+    SCard,
   },
   data: () => ({
     email: '',

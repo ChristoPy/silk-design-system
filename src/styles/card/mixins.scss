@@ -1,0 +1,33 @@
+@mixin add-card-outlined ($color) {
+  -webkit-box-shadow: inset 0px 0px 0px 1px $color;
+  -moz-box-shadow: inset 0px 0px 0px 1px $color;
+  box-shadow: inset 0px 0px 0px 1px $color;
+}
+
+@mixin card {
+  .card {
+    width: 100%;
+    border-radius: $card-border-radius;
+    background: #ffffff;
+
+    &.no-content {
+      .title {
+        padding: $card-content-padding;
+      }
+    }
+
+    .title {
+      padding: $card-content-padding $card-content-padding 0 $card-content-padding;
+    }
+
+    .content {
+      padding: $card-content-padding;
+    }
+  }
+}
+
+@mixin card-outlined {
+  .card.outlined {
+    @include add-card-outlined($color-gray);
+  }
+}

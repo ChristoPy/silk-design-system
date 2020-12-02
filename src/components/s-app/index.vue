@@ -12,3 +12,9 @@ export default {
   name: 'S-App',
 };
 </script>
+
+<style lang="scss">
+#app {
+  padding: .5em 1em;
+}
+</style>
