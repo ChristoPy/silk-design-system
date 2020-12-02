@@ -27,7 +27,8 @@ input,
 button,
 textarea,
 select {
-  font: inherit;
+  font-family: inherit;
+  font-size: inherit;
 }
 
 /* Slow animations if the user wants to */
